@@ -246,8 +246,8 @@ class Router
 
     protected function httpRequest($url, $method, $apiKey, $sendBody)
     {
-        if($sendBody == '[]'){
-            $sendBody = '{}';
+        if($sendBody == '[]' || $sendBody == '{}'){
+            $sendBody = '';
         }
         
         $result = [];
