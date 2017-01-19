@@ -4,8 +4,9 @@ HyperTrack lets you build location features, without worrying about infrastructu
 * Credentials: APIkey
 
 ## How to get credentials: 
-0. Item one 
-1. Item two 
+0. Sign-up on [HyperTrack.io](https://dashboard.hypertrack.io/signup/) 
+1. After registration, in dashboard, go to page [settings/accounts](https://dashboard.hypertrack.io/settings/accounts)
+2. Use "Secret Key" as "apiKey" credentials
 
 ## HyperTrack.createDriver
 Create and return a Driver object.
