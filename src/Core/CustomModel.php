@@ -23,8 +23,8 @@ class CustomModel
         ){
             $result['destination']['location'] = [
                 'type' => 'Point', 'coordinates' => [
-                    $param['locationLatitude'],
-                    $param['locationLongitude']
+                    floatval($param['locationLatitude']),
+                    floatval($param['locationLongitude'])
                 ] ];
         }
         foreach(['action', 'order_id', 'committed_eta'] as $field){
@@ -44,8 +44,8 @@ class CustomModel
         ){
             $result['location'] = [
                 'type' => 'Point', 'coordinates' => [
-                    $param['locationLatitude'],
-                    $param['locationLongitude']
+                    floatval($param['locationLatitude']),
+                    floatval($param['locationLongitude'])
                 ] ];
         }
 
@@ -66,8 +66,8 @@ class CustomModel
         ){
             $result['location'] = [
                 'type' => 'Point', 'coordinates' => [
-                    $param['locationLatitude'],
-                    $param['locationLongitude']
+                    floatval($param['locationLatitude']),
+                    floatval($param['locationLongitude'])
                 ] ];
         }
 
@@ -93,8 +93,8 @@ class CustomModel
         ){
             $result['location'] = [
                 'type' => 'Point', 'coordinates' => [
-                    $param['locationLatitude'],
-                    $param['locationLongitude']
+                    floatval($param['locationLatitude']),
+                    floatval($param['locationLongitude'])
                 ] ];
         }
 
