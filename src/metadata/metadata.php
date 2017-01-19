@@ -206,7 +206,7 @@ return array (
     3 => 
     array (
       'name' => 'deleteDriver',
-      'description' => 'Delete an existing customer object.',
+      'description' => 'Delete an existing driver object.',
       'args' => 
       array (
         0 => 

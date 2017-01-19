@@ -44,7 +44,7 @@ Edit an existing driver object.
 | fleetId    | String     | The identifier of the fleet to which the driver belongs.
 
 ## HyperTrack.deleteDriver
-Delete an existing customer object.
+Delete an existing driver object.
 
 | Field     | Type       | Description
 |-----------|------------|----------

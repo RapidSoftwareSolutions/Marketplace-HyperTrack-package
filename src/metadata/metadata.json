@@ -166,7 +166,7 @@
     },
     {
       "name": "deleteDriver",
-      "description": "Delete an existing customer object.",
+      "description": "Delete an existing driver object.",
       "args": [
         {
           "name": "apiKey",
