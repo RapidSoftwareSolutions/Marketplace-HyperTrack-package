@@ -16,7 +16,7 @@ return array (
     'domain' => 'hypertrack.io',
     'credentials' => 
     array (
-      0 => 'APIkey',
+      0 => 'apiKey',
     ),
   ),
   'blocks' => 

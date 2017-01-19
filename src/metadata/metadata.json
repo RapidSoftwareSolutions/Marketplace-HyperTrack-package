@@ -10,7 +10,7 @@
   "accounts": {
     "domain": "hypertrack.io",
     "credentials": [
-      "APIkey"
+      "apiKey"
     ]
   },
   "blocks": [
