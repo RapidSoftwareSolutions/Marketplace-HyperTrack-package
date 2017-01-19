@@ -87,6 +87,7 @@ class Router
                 echo $inputPram;
                 exit(200);
             }
+            
             // Validate param as reqiured and/or json
             $validateResult = $this->validateParam($inputPram, $param['required'], $param['json']);
             if($validateResult){
@@ -247,14 +248,20 @@ class Router
     {
         $result = [];
         try {
-            // disable cert verification
-            $vendorResponse = $this->http->request($method, $url, [
+            // Setup client
+            $clientSetup = [
                 'headers' => [
                     'Authorization' => 'token ' . $apiKey,
                     'Content-Type' => 'application/json',
-                ],
-                'body' => $sendBody
-            ]);
+                ] ];
+
+            if($method == 'GET'){
+                $clientSetup['query'] = json_decode($sendBody, true);
+            }else{
+                $clientSetup['body'] = $sendBody;
+            }
+            
+            $vendorResponse = $this->http->request($method, $url, $clientSetup);
             $responseBody = $vendorResponse->getBody()->getContents();
 
             $result['callback'] = 'success';
