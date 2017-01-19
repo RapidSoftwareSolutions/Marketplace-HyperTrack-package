@@ -100,4 +100,10 @@ class CustomModel
 
         return json_encode($result);
     }
+    
+    public static function createBulkGPSLogs($param)
+    {
+        $result = $param['gpsLogObjectsList'];
+        return json_encode($result);
+    }
 }

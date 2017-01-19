@@ -3384,7 +3384,8 @@ return array (
         'gpsLogObjectsList' => 'gpsLogObjectsList',
       ),
       'vendorUrl' => 'https://app.hypertrack.io/api/v1/gps/bulk/',
-      'method' => 'POST'
+      'method' => 'POST',
+      'custom' => true,
     ),
     'getSingleGPSLog' => 
     array (

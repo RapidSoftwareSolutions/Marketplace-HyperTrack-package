@@ -119,10 +119,17 @@ Creates a new trip object. By default, it also starts the trip.
 | apiKey         | credentials| API key.
 | driverId       | String     | The id of the driver who will be on trip. If not specified, a new driver will be created for the purpose of the trip.
 | startLocation  | String     | The start location of the trip.
-| tasks          | Array      | The array of task ids to be performed on the trip, in format ["b2249ba8-e88c-455e-b02f-672677828ddc"].
+| tasks          | Array      | The array of task ids to be performed on the trip.
 | vehicleType    | String     | The vehicle type to be used in the trip. If not specified, this defaults to vehicle type of driver. Possible types are walking, bicycle, motorcycle, car, 3-wheeler, van.
 | hasOrderedTasks| Boolean    | Set true to indicate the tasks have a pre-defined sequence as specified in tasks. Default is false.
 | isAutoEnded    | Boolean    | Set false if the trip should not end after the last task is completed. Default is true, and the trip ends after the last task is completed.
+
+#### tasks format
+```json
+
+["b2249ba8-e88c-455e-b02f-672677828ddc", "b2249ba8-e88c-455e-b02f-672677828ddd"]
+
+```
 
 ## HyperTrack.endTrip
 Ends a live trip by trip id.
@@ -188,7 +195,14 @@ This API lets you reorder Tasks of a live Trip. This can only be done for Trips 
 |-----------|------------|----------
 | apiKey    | credentials| API key.
 | tripId    | String     | Valid trip identifier.
-| taskOrder | Array      | Array of task ids in the new sequence. Must have all ids of tasks on the trip, in format ["3a36b6df-a7e7-40d0-86b7-b5aae1ce3a2b", "77b9a3fa-a3ab-4840-aadb-cd33442ca45b"]
+| taskOrder | Array      | Array of task ids in the new sequence. Must have all ids of tasks on the trip.
+
+#### taskOrder format
+```json
+
+["b2249ba8-e88c-455e-b02f-672677828ddc", "b2249ba8-e88c-455e-b02f-672677828ddd"]
+
+```
 
 ## HyperTrack.createTask
 Creates a new task object.
@@ -199,7 +213,7 @@ Creates a new task object.
 | destinationId| String     | The id of the destination where the task will be performed.
 | action       | String     | The action of the task, possible values are pickup, delivery, visit or task. Defaults to task.
 | orderId      | String     | An id that you can specify based on your internal ids.
-| committedEta | String     | The eta commitment made to the customer to measure on-time performance, in format "2000-01-01T12:00:00.00Z".
+| committedEta | String     | The eta commitment made to the customer to measure on-time performance.
 
 ## HyperTrack.createTaskWithNewDestination
 Creates a new task object with creating new destination.
@@ -218,7 +232,7 @@ Creates a new task object with creating new destination.
 | locationLongitude| String     | Location longitude of the destination.
 | action           | String     | The action of the task, possible values are pickup, delivery, visit or task. Defaults to task.
 | orderId          | String     | An id that you can specify based on your internal ids.
-| committedEta     | String     | The eta commitment made to the customer to measure on-time performance, in format "2000-01-01T12:00:00.00Z".
+| committedEta     | String     | The eta commitment made to the customer to measure on-time performance.
 
 ## HyperTrack.completeTask
 Completes a Task.
@@ -532,6 +546,38 @@ Create multiple GPS logs, by sending a list of GPS Log objects.
 |----------------------|------------|----------
 | apiKey               | credentials| API key.
 | gpsLogObjectsList    | Array      | Array of JSON objects, list of GPS Log objects.
+
+#### gpsLogObjectsList format
+```json
+
+[
+    {
+        "driver_id": "41caa9f2-ad63-4a8b-98ed-1414c372e1ce",
+        "phone": "+16502469293",
+        "recorded_at": "2016-03-09T07:13:05.026316Z",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                77.20267225995399,
+                28.55390609244681
+            ]
+        }
+    },
+    {
+        "driver_id": "41caa9f2-ad63-4a8b-98ed-1414c372e1cc",
+        "phone": "+16502469294",
+        "recorded_at": "2016-03-09T07:13:05.036316Z",
+        "location": {
+            "type": "Point",
+            "coordinates": [
+                77.20267225995399,
+                28.55390609244681
+            ]
+        }
+    }
+]
+
+```
 
 ## HyperTrack.getSingleGPSLog
 Retrieves a GPS Log object with the id.
