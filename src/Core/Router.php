@@ -20,7 +20,7 @@ class Router
         $custom
     )
     {
-        $this->packageName = strtolower($packageName);
+        $this->packageName = $packageName;
         $this->blocks = $blocks;
         $this->custom = $custom;
         $this->klein = new \Klein\Klein();

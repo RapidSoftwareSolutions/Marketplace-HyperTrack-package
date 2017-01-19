@@ -2585,7 +2585,7 @@ return array (
         1 => 
         array (
           'name' => 'gpsLogObjectsList',
-          'type' => 'JSON',
+          'type' => 'Array',
           'info' => 'Array of JSON objects, list of GPS Log objects.',
           'required' => true,
         ),
