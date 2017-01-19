@@ -246,6 +246,10 @@ class Router
 
     protected function httpRequest($url, $method, $apiKey, $sendBody)
     {
+        if($sendBody == '[]'){
+            $sendBody = '{}';
+        }
+        
         $result = [];
         try {
             // Setup client
