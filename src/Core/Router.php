@@ -27,7 +27,7 @@ class Router
         $this->http = new \GuzzleHttp\Client(['verify' => false]);
     }
 
-    public function run()
+    public function setup()
     {
         // Metatdata
         // api/<Package_name>/
@@ -38,11 +38,24 @@ class Router
         foreach($this->blocks as $blockSettings){
             $this->setRoute($blockSettings);
         }
+    }
+
+    public function run($dispatchSettings = [])
+    {
         // Run router
-        $this->klein->dispatch();
+        if(count($dispatchSettings)>0){
+            $this->klein->dispatch($dispatchSettings);
+        }else{
+            $this->klein->dispatch();
+        }
         // Set status 200
         $this->klein->response()->unlock();
         $this->klein->response()->code(200);
+    }
+
+    public function getRouter()
+    {
+        return $this->klein;
     }
 
     private function setRoute($block)

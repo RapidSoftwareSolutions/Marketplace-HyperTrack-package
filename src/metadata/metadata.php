@@ -2747,11 +2747,6 @@ return array (
   ),
   'custom' => 
   array (
-    'root' => 
-    array (
-      'vendorUrl' => 'https://app.hypertrack.io/api/v1/',
-      'method' => 'GET',
-    ),
     'createDriver' => 
     array (
       'dictionary' => 

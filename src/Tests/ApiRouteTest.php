@@ -8,6 +8,8 @@ namespace Tests;
 class ApiRouteTest extends \PHPUnit_Framework_TestCase
 {
     protected $router;
+    protected $settings;
+    protected $packageName;
 
     protected function setUp()
     {
@@ -15,40 +17,41 @@ class ApiRouteTest extends \PHPUnit_Framework_TestCase
         define( 'INDEX_PATH', '/' );
 
         // Include metadata array
-        //$settings = include_once dirname(__DIR__) . '/metadata/metadata.php';
+        $this->settings = include_once dirname(__DIR__) . '/metadata/metadata.php';
         // Init Blocks path
-        //include_once dirname(__DIR__) . '/Core/Router.php';
-        //$this->router = new Router($settings['package'], $settings['blocks'], $settings['custom']);
-        //$this->router->run();
+        include_once dirname(__DIR__) . '/Core/Router.php';
+        $this->router = new \Core\Router($this->settings['package'], $this->settings['blocks'], $this->settings['custom']);
+        $this->router->setup();
     }
 
     public function testRouts()
     {
         $routes = [
-            ['route' => '/api/hypertrack/', 'method' => 'GET'],
+            ['route' => '/api/HyperTrack/', 'method' => 'GET'],
         ];
+        foreach($this->settings['custom'] as $blockName => $block){
+            $routes[] = ['route' => '/api/HyperTrack/' . $blockName . '/'];
+        }
 
         // Beautify output
-/*
         print("\n");
         foreach($routes as $route){
             $method = isset($route['method'])?$route['method']:'POST';
             ob_start(function ($buffer) {
             });
-            $this->router->dispatch(
-                new \Klein\Request([], [], [], [
-                    'REQUEST_METHOD' => $method,
-                    'REQUEST_URI' => $route['route']
-                ], [], null)
-            );
+            // Run router
+            $this->router->run(new \Klein\Request([], [], [], [
+                'REQUEST_METHOD' => $routes[0]['method'],
+                'REQUEST_URI' => $routes[0]['route']
+            ], [], null));
             ob_end_flush();
 
             // Output Test info
-            print($this->router->response()->code() . ' - ' . $route['route'] . "\n");
-*/
-            $this->assertEquals(200, 200);            
-        //}
+            print($this->router->getRouter()->response()->code() . ' - ' . $route['route'] . "\n");
+
+            $this->assertEquals(200, $this->router->getRouter()->response()->code());          
+        }
         // Beautify output
-        //print("\n");
+        print("\n");
     }
 }
