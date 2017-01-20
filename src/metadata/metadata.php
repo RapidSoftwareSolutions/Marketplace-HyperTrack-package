@@ -2849,6 +2849,7 @@ return array (
       ),
       'vendorUrl' => 'https://app.hypertrack.io/api/v1/drivers/{{driverId}}/assign_tasks/',
       'method' => 'POST',
+      'custom' => true,
     ),
     'endTripForDriver' => 
     array (

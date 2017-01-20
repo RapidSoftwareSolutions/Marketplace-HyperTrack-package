@@ -9,6 +9,16 @@ if ( ! defined( 'RAPID_IN' ) ) exit( 'No direct script access allowed' );
  */
 class CustomModel
 {
+    public static function assignTaskToDriver($param)
+    {
+        $result = [
+            'driver_id' => $param['driverId'],
+            'task_ids' => [$param['task_ids']],
+        ];
+
+        return json_encode($result);
+    }
+
     public static function createTaskWithNewDestination($param)
     {
         $result = [];

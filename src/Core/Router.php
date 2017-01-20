@@ -264,7 +264,7 @@ class Router
             }else{
                 $clientSetup['body'] = $sendBody;
             }
-            
+
             $vendorResponse = $this->http->request($method, $url, $clientSetup);
             $responseBody = $vendorResponse->getBody()->getContents();
 
