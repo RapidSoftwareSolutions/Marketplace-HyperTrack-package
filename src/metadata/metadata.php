@@ -3109,7 +3109,7 @@ return array (
         'apiKey' => 'apiKey',
         'shiftId' => 'shiftId',
       ),
-      'vendorUrl' => 'https://app.hypertrack.io/api/v1/shift/{{shiftId}}/',
+      'vendorUrl' => 'https://app.hypertrack.io/api/v1/shifts/{{shiftId}}/',
       'method' => 'DELETE',
     ),
     'getShifts' => 
