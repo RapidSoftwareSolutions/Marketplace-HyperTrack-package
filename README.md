@@ -1,5 +1,7 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/HyperTrack/functions?utm_source=RapidAPIGitHub_HyperTrackFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # HyperTrack Package
-HyperTrack lets you build location features, without worrying about infrastructure.
+HyperTrack lets you build location features, without worrying about infrastructure. Add location tracking for logistics and courier services.
 * Domain: hypertrack.io
 * Credentials: APIkey
 
