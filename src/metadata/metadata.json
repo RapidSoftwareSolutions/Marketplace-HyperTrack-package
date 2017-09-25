@@ -15,6 +15,11 @@
       "HyperTrack"
     ]
   },
+  "steps": [
+    "Log in or Sign-up on HyperTrack.io",
+    "After registration, in dashboard, go to page settings/accounts",
+    "Use 'Secret Key' as 'apiKey' credentials"
+  ],
   "blocks": [
     {
       "name": "createUser",
