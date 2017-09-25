@@ -5,7 +5,7 @@ HyperTrack lets you build location features, without worrying about infrastructu
 * Credentials: accessToken, traking, HyperTrack
 
 ## How to get credentials: 
-0. Sign-up on [HyperTrack.io](https://dashboard.hypertrack.com/signup/)
+0. Log in or Sign-up on [HyperTrack.io](https://dashboard.hypertrack.com/)
 1. After registration, in dashboard, go to page [settings/accounts](https://dashboard.hypertrack.com/settings/accounts)
 2. Use "Secret Key" as "apiKey" credentials
 
